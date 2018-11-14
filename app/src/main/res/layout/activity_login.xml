@@ -51,7 +51,8 @@
         android:textAlignment="center"
         android:text="Forgot password ? Click here."
         android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/register"

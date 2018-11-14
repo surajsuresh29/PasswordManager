@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteY="81dp" />
 
     <Button
-        android:id="@+id/viewpassword"
+        android:id="@+id/viewpasswords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

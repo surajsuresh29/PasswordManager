@@ -16,7 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="101dp"
         android:ems="10"
-        android:hint="user id"
+        android:hint="USER ID"
         android:textAlignment="center"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -32,7 +32,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="168dp"
         android:ems="10"
-        android:hint="PIN"
+        android:hint="6-Digit PIN"
+        android:maxLength="6"
         android:textAlignment="center"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
@@ -52,17 +53,17 @@
 
     <EditText
         android:id="@+id/securityanswer"
-        android:layout_width="245dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="170dp"
         android:ems="10"
         android:hint="Enter security answer here."
+        android:inputType="textPersonName"
         android:textAlignment="center"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
-        android:inputType="textPersonName" />
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/register"
