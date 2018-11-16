@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "55510474533",
+    "firebase_url": "https://password-manager-asas.firebaseio.com",
+    "project_id": "password-manager-asas",
+    "storage_bucket": "password-manager-asas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55510474533:android:51267df9537688ec",
+        "android_client_info": {
+          "package_name": "com.aswin.abhilash.passwordmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "55510474533-k8s6kii4ij5l3ramjrb5ru587dqorc4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aswin.abhilash.passwordmanager",
+            "certificate_hash": "3fea116b7501020adff1a832438a6a279bea7cd7"
+          }
+        },
+        {
+          "client_id": "55510474533-56m3hq686hrp1ulddnd8nq48uvk3jsvl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-i5vXiurSflsVHkBLSJ_qc_nhd2OLvDY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "55510474533-56m3hq686hrp1ulddnd8nq48uvk3jsvl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
