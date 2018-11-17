@@ -15,11 +15,18 @@ public class Main2Activity extends AppCompatActivity {
 
         Button storepasswords =findViewById(R.id.storepasswords);
         Button viewpasswords = findViewById(R.id.viewpasswords);
+        Bundle bundle = getIntent().getExtras();
+        final String pin = bundle.getString("pin");
+        final String userid = bundle.getString("userid");
 
         storepasswords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent storepswd=new Intent(getApplicationContext(),StorePassword.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("userid",userid);
+                bundle.putString("pin",pin);
+                storepswd.putExtras(bundle);
                 startActivity(storepswd);
 
             }
@@ -28,8 +35,11 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent viewpswd=new Intent(getApplicationContext(),GetPassword.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("userid",userid);
+                bundle.putString("pin",pin);
+                viewpswd.putExtras(bundle);
                 startActivity(viewpswd);
-
             }
         });
     }

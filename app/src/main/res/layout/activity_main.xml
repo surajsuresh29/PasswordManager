@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/userpin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -14,13 +13,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="101dp"
+        android:layout_marginTop="103dp"
         android:ems="10"
         android:hint="USER ID"
+        android:inputType="text"
         android:textAlignment="center"
-        android:textColorHint="@color/white"
         android:textColor="@color/white"
-        android:inputType="textPersonName"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="84dp"
         tools:layout_editor_absoluteY="71dp" />
 
@@ -30,26 +30,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="170dp"
         android:ems="10"
-        android:hint="6-Digit PIN"
+        android:hint="8-Digit PIN"
         android:inputType="numberPassword"
-        android:maxLength="6"
+        android:maxLength="8"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/securityquestion"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="249dp"
         android:ems="10"
-        android:textAlignment="center"
         android:hint="Enter a security question."
-        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:inputType="textMultiLine" />
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/securityanswer"
@@ -57,13 +61,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="249dp"
         android:ems="10"
         android:hint="Enter security answer here."
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColorHint="@color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/register"
@@ -71,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="93dp"
-        android:text="REGISTER" />
+        android:layout_marginBottom="184dp"
+        android:text="REGISTER"
+        android:textStyle="bold" />
 </RelativeLayout>

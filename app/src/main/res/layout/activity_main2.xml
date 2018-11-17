@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="126dp"
+        android:layout_marginTop="200dp"
         android:text="Store Passwords"
         tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="81dp" />
@@ -22,8 +22,6 @@
         android:id="@+id/viewpasswords"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="205dp"
-        android:text="VIew Stored Passwords" />
+        android:layout_centerInParent="true"
+        android:text="View Stored Passwords" />
 </RelativeLayout>

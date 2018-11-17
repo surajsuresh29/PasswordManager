@@ -10,8 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +31,49 @@ public class LoginActivity extends AppCompatActivity {
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText loginpswd = findViewById(R.id.loginpassword);
-                String pass = loginpswd.getText().toString();
-                if(TextUtils.isEmpty(pass))
-                {
-                    loginpswd.setError("Please enter your pin.");
-                }
-                else if(pass.contentEquals("123456")) {
-                    Intent login = new Intent(getApplicationContext(), Main2Activity.class);
-                    startActivity(login);
-                }
-                else
-                {
-                    Toast.makeText(LoginActivity.this, "PLEASE ENTER CORRECT PIN", Toast.LENGTH_LONG).show();
-                }
+                final EditText userid = findViewById(R.id.userid);
+                final EditText loginpswd = findViewById(R.id.loginpassword);
+                final String uid = userid.getText().toString();
+                final String pass = loginpswd.getText().toString();
+                final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                final DatabaseReference dbref = database.getReference(uid);
+                final DatabaseReference usref = dbref.child("pin");
 
+                usref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot snapshot) {
+                       String pin  = String.valueOf(snapshot.getValue());
+                        if(TextUtils.isEmpty(uid))
+                        {
+                            userid.setError("Please enter your User ID.");
+                        }
+                        if(pass.length()<8)
+                        {
+                            loginpswd.setError("Please enter an 8 digit password.");
+                        }
+                        if(TextUtils.isEmpty(pass))
+                        {
+                            loginpswd.setError("Please enter your PIN.");
+                        }
+                        else if(( uid.contentEquals(dbref.getKey())&& pass.contentEquals(pin)))
+                        {
+                            Toast.makeText(LoginActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
+                            Intent login = new Intent(getApplicationContext(),Main2Activity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("userid",uid);
+                            bundle.putString("pin",pin);
+                            login.putExtras(bundle);
+                            startActivity(login);
+                        }
+                        else
+                        {
+                            Toast.makeText(LoginActivity.this, "Please enter correct credentials", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
             }
         });
 
